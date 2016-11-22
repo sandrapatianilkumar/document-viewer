@@ -1,4 +1,5 @@
 # DocViewer
+> A PDF document viewer and downloader
 ## Versions
 #### Packages
 * npm - 2.14.7
