@@ -13,11 +13,18 @@ var path = require('path');
 //create express app
 var app = express();
 
+//port number 
+var port = 1500;
+
 // set the static file to serve
+/**
+ * __dirname : name of the directory that the currently executing script resides 
+ * ref: https://nodejs.org/docs/latest/api/globals.html#globals_dirname
+ */
 app.use(express.static(path.join(__dirname,'views')));
 
 // listen port to start server
-app.listen(1500,function(){
-    console.log("server is listening on 1500 ")
+app.listen(port,function(){
+    console.log("server is listening on 1500 ");
 });
 
