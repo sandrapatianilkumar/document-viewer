@@ -1,0 +1,23 @@
+.#{$prefix}check-column {
+    .#{$prefix}checkcolumn-checkbox {
+        @include font-icon($checkcolumn-checkbox-glyph, $pseudo: after, $color: $checkcolumn-checkbox-color);
+    }
+}
+
+.#{$prefix}check-column.#{$prefix}checkcolumn-allchecked {
+    .#{$prefix}checkcolumn-checkbox {
+        @include font-icon($checkcolumn-checkbox-checked-glyph, $pseudo: after);
+    }
+}
+
+.#{$prefix}grid-checkcell {
+    .#{$prefix}checkcell-checkbox {
+        @include font-icon($checkcolumn-checkbox-glyph, $pseudo: after, $color: $checkcolumn-checkbox-color);
+    }
+}
+
+.#{$prefix}checkcell-checked {
+    .#{$prefix}checkcell-checkbox {
+        @include font-icon($checkcolumn-checkbox-checked-glyph, $pseudo: after);
+    }
+}

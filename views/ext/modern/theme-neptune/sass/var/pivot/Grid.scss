@@ -1,0 +1,35 @@
+/** @class Ext.pivot.Grid */
+
+$ext-pivot-trial: false !default; // Updated automatically by the build script.
+
+/**
+ * @var {color}
+ * The text color of group header titles
+ */
+$pivot-grid-group-title-color: dynamic(adjust-color($base-color, $hue: 0.952deg, $saturation: -6.718%, $lightness: -41.961%));
+
+/**
+ * @var {number/list}
+ * The amount of padding to add to the group title element.  This is typically used
+ * to reserve space for an icon by setting the amount of space to be reserved for the icon
+ * as the left value and setting the remaining sides to 0.
+ */
+$pivot-grid-group-icon-padding: dynamic(0 0 0 14px);
+
+/**
+ * @var {color}
+ * The text color of group totals
+ */
+$pivot-grid-group-total-color: dynamic($pivot-grid-group-title-color);
+
+/**
+ * @var {color}
+ * The text color of grand totals
+ */
+$pivot-grid-grand-total-color: dynamic($pivot-grid-group-title-color);
+
+/**
+ * @var {string}
+ * The cursor of group headers
+ */
+$pivot-grid-group-header-cursor: dynamic(pointer);
