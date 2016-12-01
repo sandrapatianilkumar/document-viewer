@@ -10,7 +10,8 @@ Ext.define('DocViewer.Application', {
 
     stores: [
         // TODO: add global / shared stores here
-        'docs.ViewList'
+        'docs.ViewList',
+        'downloads.SoftwaresList'
     ],
     
     launch: function () {

@@ -4,14 +4,16 @@ Ext.define('DocViewer.store.docs.ViewList', {
     alias: 'store.viewlist',
 
     fields: [
-        'name'
+        'name', 'fileName'
     ],
 
+    // Todo: make rest call to get actual files list
     data: [
-        { name: 'Jean Luc' },
-        { name: 'Worf' },
-        { name: 'Deanna' },
-        { name: 'Data' }
+        { name: 'First Node App', fileName: 'First-Node-App.pdf' },
+        { name: 'UserManual On UAN Functions & Process', fileName: 'UserManual On UAN Functions & Process.pdf'  },
+        { name: 'Test', fileName: 'test.pdf'  },
+        { name: 'FAQ Member Ver 1.1', fileName: 'FAQ-Member-Ver1.1.pdf'  },
+        { name: 'Not Found', fileName: ''  }
     ],
 
     autoLoad:true,

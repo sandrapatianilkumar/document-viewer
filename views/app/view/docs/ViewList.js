@@ -15,7 +15,7 @@ Ext.define('DocViewer.view.docs.ViewList', {
 
     title: 'ViewList',
     hideHeaders: true,
-    
+
     columns: [{
         dataIndex: 'name',
         flex: 1

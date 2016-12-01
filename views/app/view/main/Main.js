@@ -15,11 +15,14 @@ Ext.define('DocViewer.view.main.Main', {
 
         'DocViewer.view.main.MainController',
         'DocViewer.view.main.MainModel',
-        'DocViewer.view.docs.ViewList'
+        'DocViewer.view.docs.ViewList',
+        'DocViewer.view.downloads.SoftwaresList'
     ],
 
     controller: 'main',
-    viewModel: 'main',
+    viewModel: {
+        type: 'main'
+    },
 
     layout: {
         type: 'border'
@@ -41,7 +44,34 @@ Ext.define('DocViewer.view.main.Main', {
             xtype: 'viewlist',
             bind: {
                 store: '{docviewlist}'
+            },
+            listeners: {
+                rowclick: 'onRowClick'
+            }
+        }, {
+            xtype: 'sofwareslist',
+            bind: {
+                store: '{softwareslist}'
             }
         }]
+    }, {
+        xtype: 'panel',
+        region: 'center',
+        title: 'My PDF',
+        width: '100%',
+        height: '100%',
+        bind: {
+            data: {
+                pdfFileName: '{pdfFileName}'
+            }
+        },
+        tpl: [
+            '<tpl if="!Ext.isEmpty(pdfFileName)">',
+            '<iframe style="height: 100%; width: 100%; border: none;" src="resources/pdfs/{pdfFileName}" />',
+            '</tpl>',
+            '<tpl if={!pdfFileName}>',
+            '<div>File Not Found</div>',
+            '</tpl>'
+        ]
     }]
 });
