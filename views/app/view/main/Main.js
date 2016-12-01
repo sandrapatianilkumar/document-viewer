@@ -58,6 +58,7 @@ Ext.define('DocViewer.view.main.Main', {
         xtype: 'panel',
         region: 'center',
         title: 'My PDF',
+        titleAlign: 'center',
         width: '100%',
         height: '100%',
         bind: {
