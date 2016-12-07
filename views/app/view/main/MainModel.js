@@ -8,7 +8,7 @@ Ext.define('DocViewer.view.main.MainModel', {
 
     data: {
         name: 'DocViewer',
-        pdfFileName: null
+        pdfFileName: "resources/test.html"
     }
 
     //TODO - add data, formulas and/or methods to support your view

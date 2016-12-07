@@ -13,10 +13,11 @@ Ext.define('DocViewer.view.docs.ViewList', {
         type: 'viewlist'
     },
 
-    title: 'ViewList',
+    title: "PDFS List",
     hideHeaders: true,
-
+    emptyText: 'List is empty',
     columns: [{
+        xtype: 'treecolumn',
         dataIndex: 'name',
         flex: 1
     }]

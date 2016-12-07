@@ -1,27 +1,32 @@
 Ext.define('DocViewer.store.docs.ViewList', {
-    extend: 'Ext.data.Store',
+    extend: 'Ext.data.TreeStore',
 
     alias: 'store.viewlist',
 
     fields: [
-        'name', 'fileName'
+        'name', 'type', 'path'
     ],
 
-    // Todo: make rest call to get actual files list
-    data: [
-        { name: 'First Node App', fileName: 'First-Node-App.pdf' },
-        { name: 'UserManual On UAN Functions & Process', fileName: 'UserManual On UAN Functions & Process.pdf'  },
-        { name: 'Test', fileName: 'test.pdf'  },
-        { name: 'FAQ Member Ver 1.1', fileName: 'FAQ-Member-Ver1.1.pdf'  },
-        { name: 'Not Found', fileName: ''  }
-    ],
-
-    autoLoad:true,
+    autoLoad: true,
 
     proxy: {
-        type: 'memory',
+        type: 'ajax',
+        url: '/viewlist',
         reader: {
             type: 'json'
         }
-    }
+    },
+
+    root: {
+        text: 'PDFs',
+        expanded: true
+    },
+
+    folderSort: true,
+
+    sorters: [{
+        property: 'text',
+        direction: 'ASC'
+    }]
+
 });

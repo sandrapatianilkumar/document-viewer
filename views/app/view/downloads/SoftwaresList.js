@@ -1,7 +1,7 @@
 
-Ext.define('DocViewer.view.downloads.SoftwaresList',{
+Ext.define('DocViewer.view.downloads.SoftwaresList', {
     extend: 'Ext.grid.Panel',
-    alias:'widget.sofwareslist',
+    alias: 'widget.sofwareslist',
 
     requires: [
         'DocViewer.view.downloads.SoftwaresListController',
@@ -12,10 +12,11 @@ Ext.define('DocViewer.view.downloads.SoftwaresList',{
     viewModel: {
         type: 'softwareslist'
     },
-    title: 'Software List',
+    title: 'Softwares download List',
     hideHeaders: true,
-    
+    emptyText: 'List is empty',
     columns: [{
+        xtype: 'treecolumn',
         dataIndex: 'name',
         flex: 1
     }]

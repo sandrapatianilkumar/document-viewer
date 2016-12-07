@@ -25,12 +25,14 @@ Ext.define('DocViewer.view.main.Main', {
     },
 
     layout: {
-        type: 'border'
+        type: 'border',
+        border: true
     },
 
     items: [{
         xtype: 'container',
         region: 'west',
+        collapsible: true,
         width: '20%',
         minWidth: 200,
         layout: {
@@ -46,18 +48,21 @@ Ext.define('DocViewer.view.main.Main', {
                 store: '{docviewlist}'
             },
             listeners: {
-                rowclick: 'onRowClick'
+                rowclick: 'onRowClickPdfs'
             }
         }, {
             xtype: 'sofwareslist',
             bind: {
                 store: '{softwareslist}'
+            },
+            listeners: {
+                rowclick: 'onRowClickSoftwares'
             }
         }]
     }, {
         xtype: 'panel',
         region: 'center',
-        title: 'My PDF',
+        title: 'Document - Viewer',
         titleAlign: 'center',
         width: '100%',
         height: '100%',
@@ -68,7 +73,7 @@ Ext.define('DocViewer.view.main.Main', {
         },
         tpl: [
             '<tpl if="!Ext.isEmpty(pdfFileName)">',
-            '<iframe style="height: 100%; width: 100%; border: none;" src="resources/pdfs/{pdfFileName}" />',
+            '<iframe style="height: 100%; width: 100%; border: none;" src="{pdfFileName}" />',
             '</tpl>',
             '<tpl if={!pdfFileName}>',
             '<div>File Not Found</div>',

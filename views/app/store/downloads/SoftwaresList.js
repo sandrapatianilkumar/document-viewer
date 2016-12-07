@@ -1,25 +1,32 @@
 Ext.define('DocViewer.store.downloads.SoftwaresList', {
-    extend: 'Ext.data.Store',
+    extend: 'Ext.data.TreeStore',
 
     alias: 'store.softwareslist',
 
     fields: [
-        'name'
+        'name', 'type', 'path'
     ],
 
-    data: [
-        { name: 'Jean Luc' },
-        { name: 'Worf' },
-        { name: 'Deanna' },
-        { name: 'Data' }
-    ],
-
-    autoLoad:true,
+    autoLoad: true,
 
     proxy: {
-        type: 'memory',
+        type: 'ajax',
+        url: '/softwareslist',
         reader: {
             type: 'json'
         }
-    }
+    },
+
+    root: {
+        text: 'Softwares List',
+        expanded: true
+    },
+
+    folderSort: true,
+
+    sorters: [{
+        property: 'text',
+        direction: 'ASC'
+    }]
+
 });

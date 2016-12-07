@@ -9,7 +9,32 @@ Ext.define('DocViewer.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onRowClick: function(grid, record, tr, rowIndex, e, eOpts) {
-        this.getViewModel().set('pdfFileName', record.get('fileName'));
+    // pfd viewers on row click functionality 
+    onRowClickPdfs: function(grid, record, tr, rowIndex, e, eOpts) {
+        this.getViewModel().set('pdfFileName', record.get('path'));
+    },
+
+    // downloadsoftwares  on row click functionality 
+    onRowClickSoftwares: function(grid, record, tr, rowIndex, e, eOpts) {
+        
+        var me, path, name;
+        me = this;
+        path = record.get('path');
+        name = record.get('name');
+        // if user select yes, downloads the selected software
+        Ext.Msg.show({
+            scope: 'me',
+            title: 'Confirmation?',
+            message: 'Would you like to download ' + name + ' ?',
+            buttons: Ext.Msg.YESNO,
+            icon: Ext.Msg.QUESTION,
+            fn: function(btn) {
+                if (btn === 'yes') {
+                    me.getViewModel().set('pdfFileName', record.get('path'));
+                } else if (btn === 'no') {
+                    // nothing do
+                }
+            }
+        });
     }
 });
