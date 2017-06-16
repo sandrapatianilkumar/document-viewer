@@ -36,7 +36,7 @@ var app = express();
 var Routes = require('./routes/routes');
 
 //port number 
-var port = 8080;
+var port = process.env.PORT || 1500;
 
 //static content path
 var publicContent = path.join(__dirname, 'views');
@@ -56,5 +56,5 @@ app.use('/', Routes); // all the routes defined in the Routes are attached to th
 
 // listen port to start server
 app.listen(port, function () {
-    console.log("server is listening on 1500 ");
+    console.log("server is listening on " + port + "...");
 });
