@@ -36,7 +36,7 @@ var app = express();
 var Routes = require('./routes/routes');
 
 //port number 
-var port = 1500;
+var port = 8080;
 
 //static content path
 var publicContent = path.join(__dirname, 'views');
